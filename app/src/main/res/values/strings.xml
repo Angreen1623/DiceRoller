@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dice Roller</string>
+    <string name="txtNum">Role o Dado:</string>
+    <string name="btnRoll">Rolar</string>
+</resources>
