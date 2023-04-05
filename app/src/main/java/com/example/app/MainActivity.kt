@@ -10,20 +10,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnRoll: Button = findViewById(R.id.btnRoll)
-        val txtNum: TextView = findViewById(R.id.txtNum)
+
 
         btnRoll.setOnClickListener {
-            val randomInt = (1..6).random()
             rollDice()
-            txtNum.text = randomInt.toString()
         }
 
     }
 
     private fun rollDice() {
 
-        Toast.makeText(this, "button clicked",
-        Toast.LENGTH_SHORT).show()
+
+        val diceRoll = (1..6).random()
+        val diceImage: ImageView = findViewById(R.id.imgDice)
+
+        val drawableResource = when (diceRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+
+        diceImage.setImageResource(drawableResource)
+
+        val txtNum: TextView = findViewById(R.id.txtNum)
+
+        txtNum.text = diceRoll.toString()
 
     }
 
