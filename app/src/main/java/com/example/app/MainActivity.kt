@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
 
         val btnRoll: Button = findViewById(R.id.btnRoll)
 
-
         btnRoll.setOnClickListener {
             rollDice()
         }
@@ -36,8 +35,16 @@ class MainActivity : AppCompatActivity() {
         diceImage.setImageResource(drawableResource)
 
         val txtNum: TextView = findViewById(R.id.txtNum)
+        val txtRes: TextView = findViewById(R.id.txtRes)
+        var SortNum: EditText = findViewById(R.id.SortNum)
 
         txtNum.text = diceRoll.toString()
+
+        if(diceRoll == SortNum.text.toString().toInt()){
+            Toast.makeText(this, "Ganhou!!!", Toast.LENGTH_SHORT).show()
+        }else{
+            Toast.makeText(this, "Perdeu!!!", Toast.LENGTH_SHORT).show()
+        }
 
     }
 
